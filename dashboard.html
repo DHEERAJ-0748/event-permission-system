@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+</head>
+<body>
+
+<h2 id="heading"></h2>
+<div id="content"></div>
+
+<script>
+  const role = localStorage.getItem("role");
+
+  document.getElementById("heading").innerText = 
+    "Welcome " + role.toUpperCase();
+
+  if (role === "club") {
+    document.getElementById("content").innerHTML =
+      "<ul><li>Create Event</li><li>Upload Budget</li><li>Submit Report</li></ul>";
+  }
+  else if (role === "faculty") {
+    document.getElementById("content").innerHTML =
+      "<ul><li>Review Event</li><li>Recommend Approval</li></ul>";
+  }
+  else if (role === "principal") {
+    document.getElementById("content").innerHTML =
+      "<ul><li>Approve / Reject Events</li></ul>";
+  }
+</script>
+
+</body>
+</html>
